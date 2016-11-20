@@ -9,7 +9,7 @@ SRC = $(shell cd src ;ls *.f90 ;cd ..)
 OBJ = $(SRC:.f90=.o)
 OBJ_dir = $(addprefix object/,$(OBJ))
 
-PROG = tdmf
+PROG = tdef
 
 $(PROG):global_variables.o $(OBJ)
 	$(FC) -o $(PROG) $(OBJ_dir) $(LN)
@@ -21,6 +21,6 @@ main.o:main.f90
 
 
 clean:
-	rm  -f  object/*.o  *.mod tdmf
+	rm  -f  object/*.o  *.mod tdef
 clean_complete:
-	rm  -f *~  */*~ */*/*~ object/*.o  */*.mod *.mod tdmf */#* *.out log.log
+	rm  -f *~  */*~ */*/*~ object/*.o  */*.mod *.mod tdef */#* *.out log.log
